@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'date'
 
 describe TimeWillTell::Helpers::DateRangeHelper do
   # A helper instance with the DateRangeHelper module included
