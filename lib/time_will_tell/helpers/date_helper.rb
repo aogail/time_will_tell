@@ -1,3 +1,4 @@
+require 'active_support/all'
 module TimeWillTell
   module Helpers
     module DateHelper
