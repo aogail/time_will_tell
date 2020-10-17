@@ -1,4 +1,5 @@
 require 'rails/railtie'
+require 'active_support/all'
 require 'time_will_tell/helpers/date_helper'
 require 'time_will_tell/helpers/date_range_helper'
 

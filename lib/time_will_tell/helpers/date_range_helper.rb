@@ -58,7 +58,7 @@ module TimeWillTell
                   to_month: to_month, from_year: from_year, to_year: to_year,
                   month: from_month, year: from_year, sep: separator, }
 
-        without_year = tl["#{scope}.#{template}", dates]
+        without_year = tl["#{scope}.#{template}", **dates]
 
         if show_year && from_year == to_year
           tl["#{scope}.with_year", date_range: without_year, year: from_year,
