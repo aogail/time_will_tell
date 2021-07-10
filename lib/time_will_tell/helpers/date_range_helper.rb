@@ -17,7 +17,7 @@ module TimeWillTell
         show_year = options.fetch(:show_year, true)
         loc = options.fetch(:locale, I18n.locale)
 
-        tl = ->(id, **opts) { I18n.t(id, { locale: loc }.merge(opts)) }
+        tl = ->(id, **opts) { I18n.t(id, **{ locale: loc }.merge(opts)) }
 
         month_names = (format.to_sym == :short) ?
           tl['date.abbr_month_names'] : tl['date.month_names']
