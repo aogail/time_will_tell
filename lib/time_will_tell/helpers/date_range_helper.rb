@@ -24,10 +24,11 @@ module TimeWillTell
           tl['date.abbr_month_names'] : tl['date.month_names']
 
         from_date, to_date = to_date, from_date if from_date > to_date
-        from_date = from_date.localtime if from_date.respond_to?(:localtime)
-        to_date = to_date.localtime if to_date.respond_to?(:localtime)
-        from_time = has_time(from_date) ? from_date.to_fs(:time) : nil
-        to_time = to_date.to_fs(:time) if from_time
+        from_time = from_date.to_fs(:time)
+        to_time = to_date.to_fs(:time)
+        if from_time == "00:00" and to_time == "00:00"
+          from_time = to_time = nil
+        end
         from_day = from_date.day
         to_day = to_date.day
         from_month = month_names[from_date.month]
